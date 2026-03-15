@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerbang Ksatria Digital</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            background-color: #0f172a;
+            color: #f8fafc;
+            overflow-x: hidden;
+        }
+
+        /* Tampilan Gerbang Utama */
+        #hero-section {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            transition: 0.8s ease;
+        }
+
+        /* Tampilan Portofolio (Awalnya Tersembunyi) */
+        #portfolio-section {
+            display: none; /* Disembunyikan dulu */
+            opacity: 0;
+            padding: 50px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+            transition: 1s ease;
+        }
+
+        .btn-gate {
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            background-color: #38bdf8;
+            color: #0f172a;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+            transition: 0.3s;
+        }
+
+        .btn-gate:hover {
+            transform: scale(1.1) translateY(-5px);
+            background-color: #7dd3fc;
+            box-shadow: 0 0 30px rgba(56, 189, 248, 0.6);
+        }
+
+        .profile-card {
+            background: #1e293b;
+            padding: 40px;
+            border-radius: 20px;
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            border: 1px solid #334155;
+        }
+
+        .knight-img {
+            width: 250px;
+            border-radius: 15px;
+            border: 3px solid #38bdf8;
+        }
+
+        .highlight { color: #38bdf8; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <section id="hero-section">
+        <div style="font-size: 80px; margin-bottom: 20px;">⚔️</div>
+        <h1>SELAMAT DATANG DI ARSIP KESATRIA</h1>
+        <p style="margin-bottom: 30px; color: #94a3b8;">Siapkan dirimu untuk memasuki wilayah kekuasaan ksatria digital.</p>
+        <button class="btn-gate" onclick="bukaGerbang()">MASUKI GERBANG</button>
+    </section>
+
+    <section id="portfolio-section">
+        <div class="profile-card">
+            <img src="https://cdn.displate.com/artwork/270x380/2025-06-11/6e84ab79-a7c2-4a6d-ae97-38c324c52093.jpg" alt="Knight" class="knight-img">
+            <div>
+            <div>
+                <h2>Tentang Sang Ksatria</h2>
+                <p>Senang bertemu dengan anda, <span class="highlight">
+                <p>Seorang pelajar yang berdedikasi dalam mengasah keterampilan lewat <span class="highlight">Barisan code</span>, serta membangun masa depan di dunia teknologi.</p>
+                <p>Web ini adalah bukti perjalanan saya dalam mempelajari seni pembuatan kode.</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function bukaGerbang() {
+            // 1. Sembunyikan Gerbang
+            const hero = document.getElementById('hero-section');
+            hero.style.opacity = '0';
+            
+            setTimeout(() => {
+                hero.style.display = 'none';
+                
+                // 2. Tampilkan Portofolio
+                const portfolio = document.getElementById('portfolio-section');
+                portfolio.style.display = 'block';
+                
+                // Efek transisi muncul perlahan (fade-in)
+                setTimeout(() => {
+                    portfolio.style.opacity = '1';
+                }, 50);
+            }, 800); // Menunggu animasi fade-out selesai
+        }
+    </script>
+
+</body>
+</html>
